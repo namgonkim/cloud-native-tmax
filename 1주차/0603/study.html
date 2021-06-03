@@ -1,0 +1,35 @@
+<!-- 날짜정보를 받고 그 시간 이하와 이상에 대해 다른 style 을 적용 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>get Date Different Style</title> 
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <p id="time" style="font-size: 20px;"></p>
+        <p id="p1" style="font-size: 20px;"></p>
+    </body>
+    <script>
+        var times = new Date();
+        var sec = times.getSeconds();
+        if(sec < 10) { sec = "0" + sec; }
+        var now = times.getHours() + ":" + times.getMinutes() + ":" + sec;
+        document.getElementById("time").innerHTML = now;
+        
+        var diffTimer = '15:33:30'
+
+        if(now < diffTimer){
+            document.getElementById("p1").style.color = "red";
+            document.getElementById("p1").innerHTML = "smaller then diffTimer : " + diffTimer; 
+            document.body.style.backgroundColor = "aquamarine";
+        }
+
+        else{
+            document.getElementById("p1").style.color = "blue";
+            document.getElementById("p1").innerHTML = "bigger then diffTimer : " + diffTimer; 
+            document.body.style.backgroundColor = "gray";
+
+        }
+        
+    </script>
+</html>
