@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User List</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="assets/css/style.css" rel="stylesheet"/>
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+    </head>
+    <body>
+        <header>
+            <h1>User list</h1>
+        </header>
+        <section>
+
+            
+            <div class="container">
+                <div class="row">
+                    <div id="listBox">
+
+                    </div>        
+                </div>
+              </div>
+
+        </section>
+        <footer></footer>
+
+        <script>
+            var list = '{"employees": [' +
+            '{"firstName": "John", "lastName": "Doe"},' +
+            '{"firstName": "Anna", "lastName": "Smith"},' +
+            '{"firstName": "Peter", "lastName": "Jones"},' +
+            '{"firstName": "Peter2", "lastName": "Jones"},' +
+            '{"firstName": "Peter3", "lastName": "Jones"},' +
+            '{"firstName": "Namgon", "lastName": "Kim"}]}';
+
+            var obj = JSON.parse(list);
+
+            var vi = "";
+            var box = '';
+                
+
+            for(var i=0;i<obj.employees.length;i++){
+                box = '';
+                box += '<div class="user-box col-sm-4">' + '<p class="user-name">' +
+                    obj.employees[i].firstName + " " + obj.employees[i].lastName + '</p>' +
+                    '<p>더보기'+ '</p>' + '</div>';
+                // vi = "";
+                // vi +="<div class='user-box col-sm-4'>";
+                // vi += "<p>" + obj.employees[i].firstName + " " + obj.employees[i].lastName + "</p>";
+                // vi += "<p class='btn'> 더보기 </p> </div>";
+                vi += box;
+            }
+            
+            document.getElementById("listBox").innerHTML = vi;
+            // document.getElementById("user1").innerHTML = vi;
+        </script>
+
+    </body>
+</html>
