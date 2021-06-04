@@ -15,8 +15,6 @@
             <h1>User list</h1>
         </header>
         <section>
-
-            
             <div class="container">
                 <div class="row">
                     <div id="listBox">
@@ -47,7 +45,7 @@
                 box = '';
                 box += '<div class="user-box col-sm-4">' + '<p class="user-name">' +
                     obj.employees[i].firstName + " " + obj.employees[i].lastName + '</p>' +
-                    '<p>더보기'+ '</p>' + '</div>';
+                    '<p class="more" onclick="myFunc()">더보기'+ '</p>' + '</div>';
                 // vi = "";
                 // vi +="<div class='user-box col-sm-4'>";
                 // vi += "<p>" + obj.employees[i].firstName + " " + obj.employees[i].lastName + "</p>";
@@ -57,6 +55,11 @@
             
             document.getElementById("listBox").innerHTML = vi;
             // document.getElementById("user1").innerHTML = vi;
+
+            function myFunc() {
+                alert("이동합니다");
+                location.href="./info.html";
+            }
         </script>
 
     </body>

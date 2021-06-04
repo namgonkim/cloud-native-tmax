@@ -1,5 +1,6 @@
 h1 {
     text-align: center;
+    padding: 20px;
 }
 
 .user-name {
@@ -24,4 +25,11 @@ h1 {
 
 #user1 {
     color: white;
+}
+
+.img-box {
+    width: 200px;
+    height: 150px;
+    background-color: darkslateblue;
+    
 }
