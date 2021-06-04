@@ -1,0 +1,13 @@
+{
+    "employees": [
+    {"firstName": "John", "lastName": "Doe", "age": "25", "sex":"Man"},
+    {"firstName": "Anna", "lastName": "Smith", "age": "23", "sex":"Woman"},
+    {"firstName": "Yahn", "lastName": "Mikey", "age": "30", "sex":"Woman"},
+    {"firstName": "WoongGi", "lastName": "Min", "age": "33", "sex":"Man"},
+    {"firstName": "JiEn", "lastName": "Park", "age": "24", "sex":"Man"},
+    {"firstName": "HyunWoo", "lastName": "Park", "age": "27", "sex":"Man"},
+    {"firstName": "TaeHee", "lastName": "Lee", "age": "27", "sex":"Man"},
+    {"firstName": "SeongHoi", "lastName": "Heo", "age": "28", "sex":"Man"}, 
+    {"firstName": "NamGon", "lastName": "Kim", "age": "27", "sex":"Man"}
+    ]
+}

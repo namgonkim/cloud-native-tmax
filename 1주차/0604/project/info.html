@@ -2,11 +2,12 @@
 <html>
     <head>
         <title>User Info</title>
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!-- 커스터마이징 CSS -->
         <link href="assets/css/style.css" rel="stylesheet"/>
     </head>
     <body>
@@ -16,35 +17,76 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12" style="margin-bottom: 20px;">
-                        <div class="col-sm-4" id="user-info-img">
-                            <div class="img-box">
-                                <img src="https://source.unsplash.com/random/200x150" alt=""/>
-                            </div>
-                            
-                        </div>
-                        <div class="form-group col-sm-8" id="user-info">
-                            <div id="user-name">
-                                <p>이름 : </p>
-                                <p>나이 : </p>
-                                <p>성별 : </p>
-                            </div>
+
+                    <div class="col-sm-4" id="user-info-img" style="margin-bottom: 20px;">
+                        <div class="img-box">
+                            <img src="https://source.unsplash.com/random/250x200" alt=""/>
                         </div>
                     </div>
-                    <div class="form-group user-memo">
+
+                    <div class="form-group col-sm-8" id="user-info">
+                        <div id="user-name">
+                            <h3>이름 : <a id="getName"></a></h3>
+                            <h3>나이 : <a id="getAge"></a></h3>
+                            <h3>성별 : <a id="getSex"></a></h3>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
                         <h3>메모 : </h3>
-                        <textarea class="form-control" rows="4">Ex culpa deserunt fugiat sint eu commodo irure elit dolore in ea aute eiusmod.</textarea>
+                        <textarea class="form-control" style="margin: 20px;" rows="3"></textarea>
+                        <button type="button" class="btn btn-primary" onclick="goBack()">리스트보기</button>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="goBack()">리스트보기</button>
+                
                 </div>
             </div>
         </section>
         <footer></footer>
+
+        <script>
+            var getParameterByName = function (paramName) { // 리턴값을 위한 변수 선언
+                var returnValue; // 현재 URL 가져오기
+                var url = location.href;
+                // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
+                var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&'); 
+                // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return 
+                for (var i = 0; i < parameters.length; i++) {
+                    var varName = parameters[i].split('=')[0];
+                    if (varName.toUpperCase() == paramName.toUpperCase()) {
+                        returnValue = parameters[i].split('=')[1];
+                        return decodeURIComponent(returnValue);
+                    }
+                } 
+            };
+
+            // 유저 정보 받기
+            var username = "";
+            var userage = "";
+            var usersex = "";
+            username += getParameterByName('userName');
+            userage += getParameterByName('age');
+            usersex += getParameterByName('sex');
+
+            document.getElementById('getName').innerHTML = username;
+            document.getElementById('getAge').innerHTML = userage;
+            document.getElementById('getSex').innerHTML = usersex;
+
+        </script>
+
         <script>
             function goBack() {
-                alert("돌아갑니다");
                 location.href="./index.html";
             }
         </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
     </body>
 </html>
