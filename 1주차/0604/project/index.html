@@ -49,16 +49,16 @@
                     '<a href="./info.html?userName=' +
                     obj.employees[i].firstName + " " + obj.employees[i].lastName + '&age=' +
                     obj.employees[i].age + '&sex=' + obj.employees[i].sex + '">more'+ '</a>' + '</div>';
-                // vi = "";
-                // vi +="<div class='user-box col-sm-4'>";
-                // vi += "<p>" + obj.employees[i].firstName + " " + obj.employees[i].lastName + "</p>";
-                // vi += "<p class='btn'> 더보기 </p> </div>";
                 vi += box;
             }
             
             document.getElementById("listBox").innerHTML = vi;
-            // document.getElementById("user1").innerHTML = vi;
 
+            // split
+            var myUrl = window.location.pathname;
+            var myUrlSplit = myUrl.split("/");
+            var myId = myUrlSplit[myUrlSplit.length-1];
+            document.getElementById("viewTest").innerHTML = myId;
         </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
