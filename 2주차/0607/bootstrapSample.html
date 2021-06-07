@@ -25,25 +25,33 @@
             </div>
             <!-- 이 코드가 있어야 float 효고가 나온다. -->
             <div class="row" id="listBox">
-
-                    <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-                        <div class="card" style="width: 100%; margin-bottom: 20px;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- 학생 데이터 -->
+            </div>
+            
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
-
-            </div>
-
+                </div>
+            
         </div>
 
         <footer></footer>
         <script>
-            var list = '{"employees": [' +
+            var list = '{"students": [' +
             '{"firstName": "John", "lastName": "Doe", "age": "25", "sex":"Man"},' +
             '{"firstName": "Anna", "lastName": "Smith", "age": "23", "sex":"Woman"},' +
             '{"firstName": "Yahn", "lastName": "Mikey", "age": "30", "sex":"Woman"},' +
@@ -60,20 +68,39 @@
             var box = '';
                 
 
-            for(var i=0;i<obj.employees.length;i++){
+            for(var i=0;i<obj.students.length;i++){
                 box = '';
-                box += '<div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">' +
-                    '<div class="card" style="width: 100%; margin-bottom: 20px;">' +
-                    '<img src="https://source.unsplash.com/random/150x100" alt=""/>' +
-                    '<div class="card-body">' +
-                    '<h5 class="card-title">학생</h5>' +
-                    '<p class="card-text">' +
-                    obj.employees[i].firstName + " " + obj.employees[i].lastName + '</p>' +
-                    '<a href="#" class="btn btn-primary">' +'more'+ '</a>' + '</div></div></div>';
+                box += 
+                    '<div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">' +
+                        '<div class="card" style="width: 100%; margin-bottom: 20px;">' +
+                            '<img src="https://source.unsplash.com/random/150x100?' + i + '" alt=""/>' +
+                            '<div class="card-body">' +
+                                '<input id="myInput" type="hidden" value="' + i +  '" />' +
+                                '<h5 class="card-title">' + obj.students[i].firstName + ' ' + obj.students[i].lastName + '</h5>' +
+                                '<p class="card-text">' + obj.students[i].age + ' / ' + obj.students[i].sex + '</p>' +
+                                '<button id="myModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">' +
+                                'View' +
+                                '</button>' +
+                            '</div>' +
+                        '</div>' + 
+                    '</div>';
                 vi += box;
             }
             
             document.getElementById("listBox").innerHTML = vi;
+
+
+            var myModal = document.getElementById('myModal');
+            console.log(myModal);
+            
+            myModal.addEventListener('shown.bs.modal', function (e) {
+                console.log(e);
+                console.log('shown.bs.modal');
+                var myInput = document.getElementById('myInput').innerText;
+                console.log(myInput);
+            });
+
+
         </script>
         <!-- Optional JavaScript; choose one of the two! -->
 
