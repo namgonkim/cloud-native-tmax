@@ -1,0 +1,4 @@
+/* CSS는 동일하게 작성하면 된다. */
+ul li {
+  list-style: none;
+}
