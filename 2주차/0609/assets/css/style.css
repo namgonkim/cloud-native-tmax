@@ -1,0 +1,155 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+section {
+  margin: 120px 0;
+}
+
+.carousel {
+    margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+  }
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+  }
+
+  /* Section id bland */
+  #bland .blanding {
+      margin-top: -5px;
+      font-size: 3rem;
+      color: coral;
+  }
+
+  #bland .blandTitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+
+  /* Section id deal */
+  #deal .title h3 {
+    font-size: 2rem;
+    color: coral;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #deal ul li {
+    padding-right: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  #deal ul li:last-child {
+    padding-right: 0px;
+  }
+
+  #deal .productImg {
+    width: 100%;
+    height: 350px;
+    background-color: gray;
+  }
+
+  #deal .productTitle {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  #deal .productScore {
+    margin-top: -15px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: darkgoldenrod;
+    font-weight: bold;
+  }
+  #deal .productPrice {
+    margin-top: -10px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  #deal .productPrice span {
+    padding-left: 20px;
+    color: gray;
+    text-decoration: line-through;
+  }
+
+  /* Section id blog */
+  #blog .title h3 {
+    font-size: 2rem;
+    color: coral;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #blog .blogImg {
+    width: 100%;
+    height: 300px;
+    background-color: gray;
+  }
+
+  #blog .blogTxt {
+    width: 90%;
+    margin: 5%;
+    background-color: white;
+    /* border: thin solid gray; */
+    position: relative;
+    top: -80px;
+  }
+
+  #blog .blogTitle {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: coral;
+  }
+
+  #blog .blogAuth {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.0rem;
+    color: gray
+  }
+  /* footer */
+  footer .footer {
+    background-color: whitesmoke;
+    height: 400px;
+    padding: 100px 0;
+  }
+
+  footer .footerLogo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+  }
+
+  footer .footerLogo span {
+    font-size: 1.7rem;
+  }
+
+  footer ul {
+    list-style: none;
+  }
+
+  footer ul li a:link {
+    color: gray;
+    text-decoration: none;
+  }
