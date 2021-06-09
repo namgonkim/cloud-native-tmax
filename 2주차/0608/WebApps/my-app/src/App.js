@@ -2,6 +2,7 @@ import React from 'react';
 import Subject from './components/Subject';
 import Navigation from './components/Navigation';
 import Content from './components/Content';
+import DataView from './components/DataView';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       </Subject>
       <Navigation />
       <Content></Content>
+      <DataView></DataView>
 
     </div>
   );
