@@ -88,10 +88,16 @@ section {
       font-weight: bold;
   }
 
-  #deal .productPrice span {
+  #deal .productPrice #pr {
       padding-left: 20px;
       color: gray;
       text-decoration: line-through;
+  }
+
+  #deal .productPrice #dis {
+      padding-left: 10px;
+      font-size: 1.0rem;
+      color: red;
   }
 
   /* Section id blog */
@@ -139,21 +145,19 @@ footer .footer{
 }
 
 footer .footerLogo {
-    font-size: 2.0rem;
+    font-size: 2.5rem;
     font-weight: bolder;
-    line-height: 0.8;
-}
+  }
 
-footer .footerLogo span {
-    font-size: 3.0rem;
-}
+  footer .footerLogo span {
+    font-size: 1.7rem;
+  }
 
-footer ul {
+  footer ul {
     list-style: none;
-    text-decoration: none;
-    padding:0px;
-}
+  }
 
-footer ul li a:link {
-    color:#c5c5c5;
-}
+  footer ul li a:link {
+    color: gray;
+    text-decoration: none;
+  }
