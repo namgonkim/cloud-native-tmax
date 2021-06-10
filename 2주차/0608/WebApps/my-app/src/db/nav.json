@@ -1,0 +1,58 @@
+{
+    "menu" :[
+        {
+            "id" : "1",
+            "name" : "Home",
+            "url" : "/"
+        },
+        {
+            "id" : "2",
+            "name" : "Features",
+            "url" : "/features"
+        },
+        {
+            "id" : "3",
+            "name" : "Pricing",
+            "url" : "/pricing"
+        },
+        {
+            "id" : "4",
+            "name" : "FAQs",
+            "url" : "/faqs"
+        },
+        {
+            "id" : "5",
+            "name" : "About",
+            "url" : "/about"
+        }
+    ],
+
+    "sidemenu" : [
+        {
+            "id" : "1",
+            "name" : "fas fa-search",
+            "url" : "/fas fa-search"
+        },
+        {
+            "id" : "2",
+            "name" : "fas fa-user",
+            "url" : "/fas fa-user"
+        },
+        {
+            "id" : "3",
+            "name" : "fas fa-random",
+            "url" : "/fas fa-random"
+        },
+        {
+            "id" : "4",
+            "name" : "far fa-heart",
+            "url" : "/far fa-heart"
+        },
+        {
+            "id" : "5",
+            "name" : "fas fa-shopping-bag",
+            "url" : "/fas fa-shopping-bag"
+        }
+    ]
+
+}

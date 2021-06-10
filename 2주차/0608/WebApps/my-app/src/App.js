@@ -1,26 +1,23 @@
 import React from 'react';
-import Subject from './components/Subject';
-import Navigation from './components/Navigation';
-import Content from './components/Content';
-import DataView from './components/DataView';
-import './App.css';
+import Header from './components/layout/Header';
+import './assets/css/mystyle.css';
+import Brand from './components/elements/widgets/brand/Brand';
+import Deal from './components/pages/deal/Deal';
+import Footer from './components/layout/Footer';
+import Blog from './components/pages/blog/Blog';
 
 function App() {
 
   // 화면에 출력되는 부분.
   return (
-    <div style={{margin: "20px"}}>
-     {/* 컴포넌트는 다음과 같이 가져와야 한다. */}
-      <Subject
-        name="NamgonKim"
-        address="Korea, Seoul"
-      >
-        010-XXXX-XXXX
-      </Subject>
-      <Navigation />
-      <Content></Content>
-      <DataView></DataView>
+    <div id="wrap">
+      <Header />
+      <Brand />
 
+      <Deal />
+      <Blog />
+
+      <Footer/>      
     </div>
   );
 }
