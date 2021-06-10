@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import productData from '../../../../db/products.json';
 import Rating from './Rating';
 
-export default function ProductView() {
+export default function ProductView({categoryName}) {
+    
+    const [newData, setNewData] = useState(productData);
+    console.log(newData);
+    console.log(categoryName);
 
-    const productList = productData.map(item => (
+    const searchData = newData.filter(product => 
+        (product.category.length === 2) ?
+        (product.category[0] === categoryName || product.category[1] === categoryName)
+        :
+        (product.category[0] === categoryName || product.category[1] === categoryName || product.category[2] === categoryName));
 
+    console.log(searchData);
+
+    const productList = searchData.map(item => (
             <div key={item.id} className="col-12 col-md-3 mb-4">
                 <div className="productImg"></div>
                 <p className="productTitle">{item.name}</p>
@@ -19,7 +30,6 @@ export default function ProductView() {
                 </p>
                 <p className="productPrice">${(item.price * (1 - item.discount/100)).toFixed(2)}<span id="pr">${item.price}</span> <span id="dis">{item.discount}%</span></p>
             </div>
-
     )).slice(0,20);
 
     return (

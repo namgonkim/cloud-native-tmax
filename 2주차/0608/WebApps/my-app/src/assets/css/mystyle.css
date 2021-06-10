@@ -153,11 +153,39 @@ footer .footerLogo {
     font-size: 1.7rem;
   }
 
+  footer .menuTitle {
+      font-size: 1.2rem;
+      font-weight: bold;
+  }
+
   footer ul {
     list-style: none;
+    padding: 0px;
+  }
+
+  footer ul li a:visited{
+    font-size: 1.0rem;
+    color: white;
+    text-decoration: none;
   }
 
   footer ul li a:link {
-    color: gray;
+    font-size: 1.0rem;
+    color: white;
     text-decoration: none;
+  }
+
+  footer ul li a:hover {
+    font-size: 1.0rem;
+    color: black;
+    text-decoration: none;
+  }
+
+  footer .subscribeTxt {
+      font-size: 1.0rem;
+  }
+
+  footer #subscribeInput {
+      margin-bottom: 10px;
+      width: 100%;
   }
