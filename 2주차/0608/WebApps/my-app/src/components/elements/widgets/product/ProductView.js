@@ -32,7 +32,7 @@ export default function ProductView({categoryName}) {
                 </p>
                 <p className="productPrice">${(item.price * (1 - item.discount/100)).toFixed(2)}<span id="pr">${item.price}</span> <span id="dis">{item.discount}%</span></p>
             </div>
-    )).slice(0,20);
+    )).slice(0,10);
 
     return (
         <div className="row mt-5">
