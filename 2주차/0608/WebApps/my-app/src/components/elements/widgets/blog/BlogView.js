@@ -10,21 +10,24 @@ export default function BlogView() {
         // {/* <!-- blog item--> */}
         <div className="col-12 col-md-4 mb-4" key={item.id}>
             <Link to={`${item.url}/${item.id}`}>
-                <div className="blogImg">
-                    <img src={item.image} alt=""/>
+                {/* <div className="blogImg" style={{backgroundImage:`url(${item.image})`, backgroundSize:"cover"}}></div> */}
+                <div className="blogImgBox">
+                    <img className="blogImg" src={item.image} alt=""/>
                 </div>
             </Link>
             
                 <div className="blogTxt">
-                    <p className="blogTitle">{item.title}</p>
-                    <Link to={`${item.authorUrl}/${item.id}`}>
+                    <Link to={`/blogDetail/${item.id}`}>
+                        <p className="blogTitle">{item.title}</p>
+                    </Link>
+                    <Link to={`${item.authorUrl}/${item.author}`}>
                         <p className="blogAuth">by {item.author}</p>
                     </Link>
                 </div>
             
         </div>
         // {/* <!-- item end --> */}
-    ));
+    )).slice(0,3);
 
     return (
         <div className="row mt-5">

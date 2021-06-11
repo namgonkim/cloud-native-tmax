@@ -114,7 +114,13 @@ section {
 
 #blog .blogImg {
     width: 100%;
-    height: 300px;
+    height: auto;
+    
+}
+
+#blog .blogImgBox {
+    width: 100%;
+    height: auto;
     background-color: gray;
 }
 
@@ -139,15 +145,20 @@ section {
     color:darkgoldenrod;
 }
 
+#blog a:link{
+    text-decoration: none;
+}
+
+#blog a:hover {
+    font-weight: bold;
+}
+
 #blog .blogAuth {
     text-align: center;
     font-style: italic;
     font-size: 1.0rem;
     color: gray;
-}
-
-#log .blogAuth a:link {
-    text-decoration: none;
+    
 }
 
 footer .footer{

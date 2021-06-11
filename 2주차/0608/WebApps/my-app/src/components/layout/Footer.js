@@ -1,11 +1,13 @@
-import React from 'react';
-import AboutUs from '../elements/ui/footer/AboutUs';
-import FollowUs from '../elements/ui/footer/FollowUs';
+import React, { useState } from 'react';
 import FooterLogo from '../elements/ui/footer/FooterLogo';
+import FooterMenuData from '../../db/footermenu.json';
 import Subscribe from '../elements/ui/footer/Subscribe';
-import UsefulLinks from '../elements/ui/footer/UsefulLinks';
+import FooterMenu from '../elements/ui/footer/FooterMenu';
 
 export default function Footer() {
+
+    const [newFooterMenu, setNewFooterMenu] = useState(FooterMenuData);
+
     return (
         <footer>
             <div className="container-fluid" style={{padding: "0"}}>
@@ -13,10 +15,16 @@ export default function Footer() {
                     <div className="container">
                         <div className="row">
                             <FooterLogo/>
-                            <AboutUs/>
-                            <UsefulLinks/>
-                            <FollowUs/>
-                            <Subscribe/>
+                            <FooterMenu
+                                footerMenuList={newFooterMenu['ABOUT US']}
+                                footerTitle = "ABOUT US" />
+                            <FooterMenu
+                                footerMenuList={newFooterMenu['USEFUL LINKS']}
+                                footerTitle = "USEFUL LINKS" />
+                            <FooterMenu
+                                footerMenuList={newFooterMenu['FOLLOW US']}
+                                footerTitle = "FOLLOW US" />
+                            <Subscribe />
                         </div>
                     </div>
                 </div>

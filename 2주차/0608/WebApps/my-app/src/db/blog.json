@@ -5,7 +5,7 @@
       "category": ["lifestyle", "men"],
       "title": "A guide to latest trends",
       "url": "/blog-details-standard",
-      "author": "Admin",
+      "author": "Naver",
       "authorUrl": "/blog-standard"
     },
     {
@@ -14,7 +14,7 @@
       "category": ["lifestyle"],
       "title": "Five ways to lead a happy life",
       "url": "/blog-details-standard",
-      "author": "Admin",
+      "author": "KaKao",
       "authorUrl": "/blog-standard"
     },
     {
@@ -23,7 +23,7 @@
       "category": ["lifestyle"],
       "title": "Tips on having a happy life",
       "url": "/blog-details-standard",
-      "author": "Admin",
+      "author": "React",
       "authorUrl": "/blog-standard"
     }
   ]
