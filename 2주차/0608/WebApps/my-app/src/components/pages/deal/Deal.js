@@ -13,7 +13,10 @@ export default function Deal() {
         <section id="deal">
             <div className="container">
                 <Title name="DAILY DEALS!"/>
-                <TabMenu setCategoryName={setCategoryName}/>
+                <p name={categoryName}></p>
+                <TabMenu 
+                setCategoryName={setCategoryName}
+                categoryName={categoryName}/>
                 <ProductView categoryName={categoryName}/>
             </div>
         </section>
