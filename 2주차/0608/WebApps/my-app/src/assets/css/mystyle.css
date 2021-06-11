@@ -32,8 +32,8 @@ section {
   /* Section id brand */
 
   #brand .brandImg {
-      margin-top: -5px;
-      font-size:3rem;
+      margin-top: -15px;
+      font-size: 4rem;
       color:coral;
   }
 
@@ -127,6 +127,10 @@ section {
     top: -80px;
 }
 
+#blog .blogTxt p{
+    text-decoration: none;
+}
+
 #blog .blogTitle {
     padding-top:20px;
     text-align: center;
@@ -140,6 +144,10 @@ section {
     font-style: italic;
     font-size: 1.0rem;
     color: gray;
+}
+
+#log .blogAuth a:link {
+    text-decoration: none;
 }
 
 footer .footer{

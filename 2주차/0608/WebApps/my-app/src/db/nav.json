@@ -68,6 +68,44 @@
             "id" : 3,
             "name" : "women"
         }
+    ],
+
+    "brand" : [
+        {
+            "id" : 1,
+            "name" : "AWS",
+            "img" : "fab fa-aws",
+            "color" : "orange",
+            "content" : "AWS Eu commodo in nulla adipisicing "
+        },
+        {
+            "id" : 2,
+            "name" : "Line",
+            "img" : "fab fa-line",
+            "color" : "orange",
+            "content" : "Line Do elit non veniam sunt nisi elit aute ea."
+        },
+        {
+            "id" : 3,
+            "name" : "Chrome",
+            "img" : "fab fa-chrome",
+            "color" : "",
+            "content" : "Chrome labore non ipsum nostrud dolore Lorem."
+        },
+        {
+            "id" : 4,
+            "name" : "Apple",
+            "img" : "fab fa-apple",
+            "color" : "gray",
+            "content" : "Apple Lorem ea ut consequat magna non."
+        },
+        {
+            "id" : 5,
+            "name" : "Airbnb",
+            "img" : "fab fa-airbnb",
+            "color" : "palevioletred",
+            "content" : "Airbnb est veniam deserunt labore consectetur."
+        }
     ]
 
 }
