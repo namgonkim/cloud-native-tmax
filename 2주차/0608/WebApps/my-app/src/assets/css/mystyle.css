@@ -52,6 +52,11 @@ section {
       text-align: center;
   }
 
+  #deal h5 {
+      margin-top: -20px;
+      text-align: center;
+  }
+
   #deal ul li {
       padding-right: 40px;
       font-size: 1.4rem;
