@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import blogData from '../../../../db/blog.json';
 
 export default function BlogView() {
 
-    const [newData, setNewData] = useState(blogData);
+    const [newData, setNewData] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3030/blog")         // 호출
+        .then(res => {
+            return res.json();                      // json 변경
+        })
+        .then(data => {
+            setNewData(data);                      // 저장
+        })
+
+    },[]);
 
     const blogDataList = newData.map(item => (
         // {/* <!-- blog item--> */}

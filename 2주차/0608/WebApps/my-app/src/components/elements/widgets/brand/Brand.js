@@ -1,11 +1,20 @@
-import { useState } from 'react';
-import BrandData from '../../../../db/nav.json';
+import { useState, useEffect } from 'react';
 
 export default function Brand() {
 
-    const [brandData, setBrandData] = useState(BrandData);
+    const [brandData, setBrandData] = useState([]);
 
-    const brandDataList = brandData.brand.map(item => (
+    useEffect(() => {
+        fetch("http://localhost:3030/brand")
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setBrandData(data);
+        })
+    },[]);
+
+    const brandDataList = brandData.map(item => (
             // {/* <!-- 요소 --> */}
             <div className="col-12 col-md-3" key={item.id}>
                 <div className="row">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/home/Home';
+import ProductDetail from './components/pages/productDetail/ProductDetail';
 import Features from './components/pages/features/Features';
 import './assets/css/mystyle.css';
 // import './assets/css/layout.css';
@@ -19,7 +20,7 @@ function App() {
         {/* path = 이동할 페이지를 설정한다 / 명확한 주소를 설정하려면 exact를 추가로 넣어준다 */}
         <Route exact path="/"><Home/></Route>
         <Route exact path="/features"><Features/></Route>
-        <Route exact path="/productdetail/:id"></Route>
+        <Route exact path="/productdetail/:p_id"><ProductDetail /></Route>
         <Route exact path="/pricing"></Route>
         <Route exact path="/faqs"></Route>
         <Route exact path="/about"></Route>

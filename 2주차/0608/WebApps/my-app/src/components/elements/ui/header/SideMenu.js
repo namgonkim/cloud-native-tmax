@@ -1,8 +1,33 @@
-export default function SideMenu() {
-    return (
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+export default function SideMenu(){
+
+    const [menuData , setMenuData] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3030/sidemenu")         // 호출
+        .then(res => {
+            return res.json();                      // json 변경
+        })
+        .then(data => {
+            setMenuData(data);                      // 저장
+        })
+
+    },[]);
+
+    
+    const menuList = menuData.map(item => (
+        <div className="same-style" key={item.id}>
+            <Link to={item.url}><i className={item.name}></i><span className="count-style">{item.count}</span></Link>
+        </div>        
+    ))
+
+    return(
+        
         <div className="col-xl-2 col-lg-2 col-md-6 col-8">
             <div className="header-right-wrap ">
-                <div className="same-style header-search d-none d-lg-block">
+                {menuList}
+                {/* <div className="same-style header-search d-none d-lg-block">
                     <button className="search-active"><i className="las la-search"></i></button>
                     <div className="search-content">
                         <form action="#">
@@ -38,7 +63,7 @@ export default function SideMenu() {
                 </div>
                 <div className="same-style mobile-off-canvas d-block d-lg-none">
                     <button className="mobile-aside-button"><i className="las la-bars"></i></button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
