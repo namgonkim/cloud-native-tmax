@@ -9,8 +9,10 @@ export default function Brand() {
             // {/* <!-- 요소 --> */}
             <div className="col-12 col-md-3" key={item.id}>
                 <div className="row">
-                    <div className="col-12 col-sm-4 brandImg"><i className={item.img}></i></div>
-                    <div className="col-12 col-sm-auto">
+                    <div className="col-12 col-sm-4 brandImg">
+                        <i className={item.img}></i>
+                    </div>
+                    <div className="col-12 col-sm-8">
                         <p className="brandTitle">{item.name}</p>
                         <p className="brandTxt">{item.content}</p>
                     </div>

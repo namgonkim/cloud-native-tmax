@@ -1,13 +1,13 @@
-import Nav from '../elements/ui/Nav';
+import Nav from '../elements/ui/header/Nav';
 import Banner from '../elements/ui/Banner';
+import HeaderTop from '../elements/ui/header/HeaderTop';
 
 export default function Header() {
     return (
-        <>
-        <div className="container-fluid" style={{padding: "0px"}}>
+        <header className="header-area clearfix">
+            <HeaderTop />
             <Nav />
             <Banner />
-        </div>
-        </>
+        </header>
     );
 }

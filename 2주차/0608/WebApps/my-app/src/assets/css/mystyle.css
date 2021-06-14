@@ -29,11 +29,11 @@ section {
     height: 32rem;
   }
 
-  /* Section id brand */
+  /* Section id bland */
 
   #brand .brandImg {
-      margin-top: -15px;
-      font-size: 4rem;
+      margin-top: -5px;
+      font-size:3rem;
       color:coral;
   }
 
@@ -53,7 +53,6 @@ section {
   }
 
   #deal h5 {
-      margin-top: -20px;
       text-align: center;
   }
 
@@ -114,13 +113,7 @@ section {
 
 #blog .blogImg {
     width: 100%;
-    height: auto;
-    
-}
-
-#blog .blogImgBox {
-    width: 100%;
-    height: auto;
+    height: 300px;
     background-color: gray;
 }
 
@@ -133,10 +126,6 @@ section {
     top: -80px;
 }
 
-#blog .blogTxt p{
-    text-decoration: none;
-}
-
 #blog .blogTitle {
     padding-top:20px;
     text-align: center;
@@ -145,20 +134,11 @@ section {
     color:darkgoldenrod;
 }
 
-#blog a:link{
-    text-decoration: none;
-}
-
-#blog a:hover {
-    font-weight: bold;
-}
-
 #blog .blogAuth {
     text-align: center;
     font-style: italic;
     font-size: 1.0rem;
     color: gray;
-    
 }
 
 footer .footer{
@@ -169,47 +149,21 @@ footer .footer{
 }
 
 footer .footerLogo {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     font-weight: bolder;
-  }
+    line-height: 0.8;
+}
 
-  footer .footerLogo span {
-    font-size: 1.7rem;
-  }
+footer .footerLogo span {
+    font-size: 3.0rem;
+}
 
-  footer .menuTitle {
-      font-size: 1.2rem;
-      font-weight: bold;
-  }
-
-  footer ul {
+footer ul {
     list-style: none;
-    padding: 0px;
-  }
-
-  footer ul li a:visited{
-    font-size: 1.0rem;
-    color: white;
     text-decoration: none;
-  }
+    padding:0px;
+}
 
-  footer ul li a:link {
-    font-size: 1.0rem;
-    color: white;
-    text-decoration: none;
-  }
-
-  footer ul li a:hover {
-    font-size: 1.0rem;
-    color: black;
-    text-decoration: none;
-  }
-
-  footer .subscribeTxt {
-      font-size: 1.0rem;
-  }
-
-  footer #subscribeInput {
-      margin-bottom: 10px;
-      width: 100%;
-  }
+footer ul li a:link {
+    color:#c5c5c5;
+}

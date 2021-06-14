@@ -1,8 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/home/Home';
-import './assets/css/mystyle.css';
 import Features from './components/pages/features/Features';
+import './assets/css/mystyle.css';
+// import './assets/css/layout.css';
+import './assets/css/animate.css';
+import './assets/css/bootstrap.css';
+import './assets/css/googlefont.css';
+import './assets/icons8/css/line-awesome.min.css';
 
 function App() {
 

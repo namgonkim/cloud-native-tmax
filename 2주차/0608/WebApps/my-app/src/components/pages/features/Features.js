@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from '../../layout/Footer';
-import Nav from '../../elements/ui/Nav';
+import Nav from '../../elements/ui/header/Nav';
 import Brand from '../../elements/widgets/brand/Brand';
 
 export default function Features() {
