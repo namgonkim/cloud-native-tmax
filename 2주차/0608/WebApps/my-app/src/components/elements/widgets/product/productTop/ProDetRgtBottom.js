@@ -1,21 +1,37 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import { Link } from 'react-router-dom';
 
-export default function ProDetRgtBottom() {
+export default function ProDetRgtBottom({data}) {
+
+    const setCategories = data.category ?
+                            data.category.map((item,index) => (
+                            <li key={index}><Link to="/shop-grid-standard">{item}</Link></li>
+                            )) : <li>No Category</li> ;
+
+    console.log(setCategories)
+
+    const setTags = data.tag ?
+                        data.tag.map((item, index) => (
+                            <li key={index}><Link to="/shop-grid-standard">{item}</Link></li>
+                        )) : <li>No Tag</li>
+
 
     return(
         <Fragment>
             <div className="pro-details-meta">
                 <span>Categories :</span>
                 <ul>
-                    <li><a href="/shop-grid-standard">fashion</a></li>
-                    
+                    {
+                        setCategories
+                    }
                 </ul>
             </div>
             <div className="pro-details-meta">
                 <span>Tags :</span>
                 <ul>
-                    <li><a href="/shop-grid-standard">fashion</a></li>
-                    
+                    {
+                        setTags
+                    }
                 </ul>
             </div>
             <div className="pro-details-social">

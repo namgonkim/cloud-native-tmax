@@ -12,6 +12,7 @@ export default function ProductDetail() {
 
     // 파라미터를 가져온다. 주소를 보낼때 사용했던 파라미터와 동일해야 한다.
     const { id } = useParams();
+    
     // 데이터를 담을 자리
     const [productData, setProductData] = useState([]);
     // 데이터 get
@@ -39,10 +40,6 @@ export default function ProductDetail() {
 
             <ProductTop 
                 productData = {productData}
-                // productName = {productData.name}
-                // productPrice = {productData.price}
-                // productRating = {productData.rating}
-                // productShortDescription = {productData.shortDescription}
             />
             {/* <ProductBottom /> */}
 

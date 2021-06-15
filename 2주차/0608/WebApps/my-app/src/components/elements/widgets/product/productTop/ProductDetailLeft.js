@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function ProductDetailLeft({productData}) {
 
-    const [imgData, setImgData] = useState(productData);
-    
+    const [isCheck, setIsCheck] = useState('');
+
+
     return(
         <div className="col-lg-6 col-md-6">
             <div className="product-large-image-wrapper">
@@ -26,7 +27,7 @@ export default function ProductDetailLeft({productData}) {
                     <div className="swiper-wrapper">
                         
                         {
-                            productData.image &&
+                            productData.image ?
                             productData.image.map((item, index) => (
                                 <div className="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style={{ width: "135px", marginRight: "10px"}}>
                                     <div className="single-image" key={index}>
@@ -34,6 +35,7 @@ export default function ProductDetailLeft({productData}) {
                                     </div>
                                 </div>
                             )).slice(0, productData.image.length -1)
+                            : <span> No Image</span>
                         }
                             
 

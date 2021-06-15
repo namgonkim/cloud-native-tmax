@@ -13,7 +13,8 @@ export default function ProductDetailRight({productData}) {
                 />
                 <ProDetRgtMiddle 
                     data = {productData}/>
-                <ProDetRgtBottom />
+                <ProDetRgtBottom
+                    data = {productData} />
 
             </div>
         </div>

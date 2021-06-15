@@ -4,6 +4,9 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from './components/pages/home/Home';
 import ProductDetail from './components/pages/productDetail/ProductDetail';
 import Features from './components/pages/features/Features';
+import WishList from './components/pages/wishlist/WishList';
+import Cart from './components/pages/cart/Cart';
+import Compare from './components/pages/compare/Compare';
 import "./assets/css/mystyle.css";
 import "./assets/css/style.css";
 import "./assets/css/animate.css";
@@ -23,7 +26,10 @@ function App() {
         <Route exact path="/"><Home/></Route>
         <Route exact path="/features"><Features/></Route>
         <Route exact path="/productdetail/:id"><ProductDetail/></Route>
-       
+        <Route exact path="/wishlist"><WishList/></Route>
+        <Route exact path="/cart"><Cart/></Route>
+        <Route exact path="/compare"><Compare/></Route>
+        
         
       </Switch>
       </ToTop>
