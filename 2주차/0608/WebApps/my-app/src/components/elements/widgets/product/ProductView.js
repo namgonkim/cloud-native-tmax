@@ -41,8 +41,16 @@ export default function ProductView({ categoryName }) {
                         <img className="hover-img" src="/assets/img/product/fashion/6.jpg" alt="" />
                     </Link>
                     <div className="product-img-badges">
-                        <span className="pink">-{item.discount}</span>
-                        <span className="purple">new</span>
+                        {/* 리액트 자바스크립트 구문 */}
+                        {/* 디스카운트가 0보다 크면 입력 */}
+                        {
+                            item.discount > 0 ? (<span className="pink">-{item.discount}</span>) : ('')
+                        }
+                        {/* 신규 아이템이면 입력 */}
+                        {
+                            item.new ? (<span className="purple">new</span>) : ('')
+                        }
+                        {/* <span className="purple">new</span> */}
                     </div>
                     <div className="product-action">
                         <div className="pro-same-action pro-wishlist">
@@ -66,8 +74,8 @@ export default function ProductView({ categoryName }) {
                         )}
                     </div>
                     <div className="product-price">
-                        <span>{item.price}</span>
-                        <span className="old">{(item.price * ((100 - item.discount) / 100)).toFixed(2)}</span>
+                        <span>{(item.price * ((100 - item.discount) / 100)).toFixed(2)}</span>
+                        <span className="old">{item.price}</span>
                     </div>
                 </div>
             </div>
