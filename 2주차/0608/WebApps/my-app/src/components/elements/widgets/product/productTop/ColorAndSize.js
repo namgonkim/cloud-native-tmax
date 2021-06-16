@@ -1,4 +1,8 @@
-export default function ColorAndSize({data}) {
+import React, { useState } from "react";
+
+export default function ColorAndSize({data, setColor, setSize}) {
+
+    const [sizeDatas, setSizeDatas] = useState(data);
 
     return(
         <div className="pro-details-size-color">
@@ -9,7 +13,7 @@ export default function ColorAndSize({data}) {
                     {
                         data.variation ? data.variation.map((item, index) => (
                             <label key={index} className={"pro-details-color-content--single " + (item.color) } >
-                                <input type="radio" name="product-color" value={item.color} checked="" />
+                                <input type="radio" name="product-color" value={item.color} />
                                 <span className="checkmark"></span>
                             </label>
                         )) : <span>Sold out</span>
@@ -23,7 +27,7 @@ export default function ColorAndSize({data}) {
                 <span>Size</span>
                 <div className="pro-details-size-content">
                     <label className="pro-details-size-content--single">
-                        <input type="radio" value="x" checked=""/>
+                        <input type="radio" value="x" />
                         <span className="size-name">x</span>
                     </label>
                 </div>

@@ -24,7 +24,7 @@ export default function ProductDetail() {
         .then(data => {
             setProductData(data);
         });
-    },[id]);
+    },[process.IP, process.PORT, id]);
 
     console.log(productData);
 
