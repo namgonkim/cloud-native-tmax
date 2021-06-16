@@ -1,52 +1,18 @@
 {
-  "compare": [
-    {
-      "id": "3",
-      "name": "Lorem ipsum jacket",
-      "image": [
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 17.45,
-      "discount": 40,
-      "shortDescription": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-      "rating": 5
-    },
-    {
-      "id": "8",
-      "name": "Lorem ipsum fashion jacket",
-      "image": [
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 29.85,
-      "discount": 10,
-      "shortDescription": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-      "rating": 5
-    },
-    {
-      "id": "9",
-      "name": "Lorem ipsum fashion female top",
-      "image": [
-        "/assets/img/product/fashion/9.jpg",
-        "/assets/img/product/fashion/7.jpg",
-        "/assets/img/product/fashion/5.jpg",
-        "/assets/img/product/fashion/2.jpg",
-        "/assets/img/product/fashion/4.jpg"
-      ],
-      "price": 35.6,
-      "discount": 0,
-      "shortDescription": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-      "rating": 4
-    }
-  ],
   "wish": [
+    {
+      "id": "2",
+      "name": "Lorem ipsum coat",
+      "image": [
+        "/assets/img/product/fashion/2.jpg",
+        "/assets/img/product/fashion/4.jpg",
+        "/assets/img/product/fashion/5.jpg",
+        "/assets/img/product/fashion/7.jpg",
+        "/assets/img/product/fashion/9.jpg"
+      ],
+      "price": 18.5,
+      "discount": 15
+    },
     {
       "id": "3",
       "name": "Lorem ipsum jacket",
@@ -72,54 +38,41 @@
       ],
       "price": 15.5,
       "discount": 0
-    },
-    {
-      "id": "2",
-      "name": "Lorem ipsum coat",
-      "image": [
-        "/assets/img/product/fashion/2.jpg",
-        "/assets/img/product/fashion/4.jpg",
-        "/assets/img/product/fashion/5.jpg",
-        "/assets/img/product/fashion/7.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 18.5,
-      "discount": 15
     }
   ],
   "blog": [
     {
       "id": 1,
-      "image": "/assets/img/blog/blog-1.jpg",
+      "image": "/assets/img/blog/01.jpg",
       "category": [
         "lifestyle",
         "men"
       ],
       "title": "A guide to latest trends",
       "url": "/blog-details-standard",
-      "author": "Naver",
+      "author": "TheUNIONGraphix",
       "authorUrl": "/blog-standard"
     },
     {
       "id": 2,
-      "image": "/assets/img/blog/blog-2.jpg",
+      "image": "/assets/img/blog/02.jpg",
       "category": [
         "lifestyle"
       ],
       "title": "Five ways to lead a happy life",
       "url": "/blog-details-standard",
-      "author": "KaKao",
+      "author": "React",
       "authorUrl": "/blog-standard"
     },
     {
       "id": 3,
-      "image": "/assets/img/blog/blog-3.jpg",
+      "image": "/assets/img/blog/03.jpg",
       "category": [
         "lifestyle"
       ],
       "title": "Tips on having a happy life",
       "url": "/blog-details-standard",
-      "author": "React",
+      "author": "Html5",
       "authorUrl": "/blog-standard"
     }
   ],
@@ -171,31 +124,32 @@
     {
       "id": 1,
       "name": "las la-search",
-      "url": "search"
+      "url": "search",
+      "count": 3
     },
     {
       "id": 2,
-      "name": "las la-user",
+      "name": "las la-user-circle",
       "url": "/user",
-      "count": 3
+      "count": 2
     },
     {
       "id": 3,
       "name": "las la-random",
       "url": "/compare",
-      "count": 2
+      "count": 1
     },
     {
       "id": 4,
-      "name": "lar la-heart",
+      "name": "las la-bookmark",
       "url": "/wishlist",
-      "count": 1
+      "count": 5
     },
     {
       "id": 5,
       "name": "las la-shopping-bag",
       "url": "/cart",
-      "count": 0
+      "count": 3
     }
   ],
   "category": [

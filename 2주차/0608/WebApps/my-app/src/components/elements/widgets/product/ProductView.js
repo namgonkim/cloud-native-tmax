@@ -5,6 +5,7 @@ import Rating from './Rating';
 export default function ProductView({ categoryName }) {
 
     const [newData, setNewData] = useState([]);
+    let process = require('../../../../db/myProcess.json');
 
     // useEffect()는 페이지가 랜더링되고 난 이후(페이지 로딩 끝) 어떤 동작이 발생하거나, 
     // 발생하지 않더라도 내장되어 있는 함수에 의해서 필요한 기능을 수행한다.
@@ -32,6 +33,58 @@ export default function ProductView({ categoryName }) {
         ) : newData;
 
 
+    const handleClick = (id) => {
+        alert(id + "를 위시리스트에 저장합니다.");
+        fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            fetch(`http://${process.IP}:${process.PORT}/wish/`,{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    id: data.id,
+                    name: data.name,
+                    image: data.image,
+                    price: data.price,
+                    discount: data.discount
+                }),
+            })
+        }).then(
+            alert("success")
+        )
+    }
+
+    const handleCompareClick = (id) => {
+        alert(id + "를 Compare에 저장합니다.");
+        fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            fetch(`http://${process.IP}:${process.PORT}/compare/`,{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    id: data.id,
+                    name: data.name,
+                    image: data.image,
+                    price: data.price,
+                    discount: data.discount,
+                    shortDescription: data.shortDescription,
+                    rating: data.rating
+                }),
+            })
+        }).then(
+            alert("success")
+        )
+    }
+
     const productList = searchData.map(item => (
         <div className="col-xl-3 col-md-6 col-lg-3 col-sm-6 " key={item.id}>
             <div className="product-wrap mb-25">
@@ -54,13 +107,13 @@ export default function ProductView({ categoryName }) {
                     </div>
                     <div className="product-action">
                         <div className="pro-same-action pro-wishlist">
-                            <button className="" title="Add to wishlist"><i className="las la-bookmark"></i></button>
+                            <button className="" title="Add to wishlist" onClick={() => handleClick(item.id)}><i className="las la-bookmark"></i></button>
                         </div>
                         <div className="pro-same-action pro-cart">
                             <button disabled="" className="active">Out of Stock</button>
                         </div>
                         <div className="pro-same-action pro-quickview">
-                            <button title="Quick View"><i className="las la-eye"></i></button>
+                            <button title="Quick View" onClick={() => handleCompareClick(item.id)}><i className="las la-eye"></i></button>
                         </div>
                     </div>
                 </div>

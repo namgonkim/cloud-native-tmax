@@ -17,7 +17,7 @@ export default function ProductDetail() {
     const [productData, setProductData] = useState([]);
     // 데이터 get
     useEffect(() => {
-        fetch(`http://${process.IP}:${process.Port}/product/${id}`)
+        fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
         .then(res => {
             return res.json();
         })
