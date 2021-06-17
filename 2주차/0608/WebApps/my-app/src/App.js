@@ -7,6 +7,7 @@ import Features from './components/pages/features/Features';
 import WishList from './components/pages/wishlist/WishList';
 import Cart from './components/pages/cart/Cart';
 import Compare from './components/pages/compare/Compare';
+import ProductList from './components/pages/productlist/ProductList';
 import "./assets/css/mystyle.css";
 import "./assets/css/style.css";
 import "./assets/css/animate.css";
@@ -24,11 +25,12 @@ function App() {
       <Switch>
         
         <Route exact path="/"><Home/></Route>
+        <Route exact path="/compare"><Compare/></Route>
+        <Route exact path="/cart"><Cart/></Route>
+        <Route exact path="/wishlist"><WishList/></Route>
         <Route exact path="/features"><Features/></Route>
         <Route exact path="/productdetail/:id"><ProductDetail/></Route>
-        <Route exact path="/wishlist"><WishList/></Route>
-        <Route exact path="/cart"><Cart/></Route>
-        <Route exact path="/compare"><Compare/></Route>
+        <Route exact path="/productlist"><ProductList/></Route>
         
         
       </Switch>

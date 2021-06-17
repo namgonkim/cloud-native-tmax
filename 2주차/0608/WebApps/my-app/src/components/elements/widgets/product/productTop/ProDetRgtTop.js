@@ -1,22 +1,22 @@
-import { Fragment } from "react";
+import { Fragment,useState } from "react";
 import Rating from '../Rating';
 
-export default function ProDetRgtTop({data}) {
-    console.log(data.rating)
+export default function ProDetRgtTop({name,price,rating,txt}) {
+
     return (
         <Fragment>
-            <h2>{data.name}</h2>
+            <h2>{name}</h2>
             <div className="product-details-price">
-                <span>{data.price}$</span>
+                <span>{price}$</span>
             </div>
             <div className="pro-details-rating-wrap">
-                {data.rating && data.rating > 0 ? 
-                ( <Rating ratingValue={data.rating} /> ) : ('')
+                {rating && rating > 0 ? (
+                    <Rating ratingValue={rating} />
+                ) : ( "" )
                 }
-                
             </div>
             <div className="pro-details-list">
-                <p>{data.shortDescription}</p>
+                <p>{txt}</p>
             </div>
         </Fragment>
     );

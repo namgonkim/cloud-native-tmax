@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import CartListView from "../../ui/CartListView";
+import CartTableFooter from "./CartTableFooter";
 
 export default function CartTable() {
 
@@ -8,20 +9,17 @@ export default function CartTable() {
 
     let process = require('../../../../db/myProcess.json');
 
-    useEffect(() => {
+    useEffect(()=>{
         fetch(`http://${process.IP}:${process.PORT}/cart`)
-            .then(res => {
-                return res.json();
-            })
-            .then(data => {
-                setCartDatas(data);
-            });
-    }, [process.IP, process.PORT]);
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setCartDatas(data);
+        });
+    },[process.IP, process.PORT]);
 
-
-
-    return (
-        // {/* <!-- 메인 컨텐츠 --> */}
+    return(
         <div className="cart-main-area pt-90 pb-100">
             <div className="container">
                 <h3 className="cart-page-title">Your cart items</h3>
@@ -43,7 +41,8 @@ export default function CartTable() {
                                     {
                                         cartDatas.map(item => (
                                             <CartListView
-                                                data={item}
+                                                data = {item}
+                                                setCartDatas = {setCartDatas}
                                             />
                                         ))
                                     }
@@ -52,8 +51,20 @@ export default function CartTable() {
                         </div>
                     </div>
                 </div>
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="cart-shiping-update-wrapper">
+                            <div className="cart-shiping-update">
+                                <a href="/shop-grid-standard">Continue Shopping</a>
+                            </div>
+                            <div className="cart-clear">
+                                <button>Clear Shopping Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <CartTableFooter />
             </div>
         </div>
-
     );
 }

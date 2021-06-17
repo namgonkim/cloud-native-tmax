@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import Headers from '../../layout/Header';
+import Header from '../../layout/Header';
 import BreadCrumb from '../../elements/ui/BreadCrumb';
 import ProductTop from '../../elements/widgets/product/productTop/ProductTop';
 import Footer from '../../layout/Footer';
@@ -30,7 +30,7 @@ export default function ProductDetail() {
 
     return (
         <Fragment>
-            <Headers/>
+            <Header/>
 
             <BreadCrumb 
                 productId = {productData.id}

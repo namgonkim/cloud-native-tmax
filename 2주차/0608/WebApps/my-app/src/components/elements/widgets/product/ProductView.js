@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
-export default function ProductView({ categoryName }) {
+export default function ProductView({ categoryName, sliceNumber, columNumber }) {
 
     const [newData, setNewData] = useState([]);
     let process = require('../../../../db/myProcess.json');
@@ -33,60 +33,70 @@ export default function ProductView({ categoryName }) {
         ) : newData;
 
 
-    const handleClick = (id) => {
-        alert(id + "를 위시리스트에 저장합니다.");
-        fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            fetch(`http://${process.IP}:${process.PORT}/wish/`,{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    id: data.id,
-                    name: data.name,
-                    image: data.image,
-                    price: data.price,
-                    discount: data.discount
-                }),
-            })
+    const handleDelete = (id) => {
+        fetch(`http://${process.IP}:${process.PORT}/wish/${id}`, {
+            method: "DELETE"
         }).then(
-            alert("success")
+            alert("삭제되었습니다.")
         )
     }
 
-    const handleCompareClick = (id) => {
-        alert(id + "를 Compare에 저장합니다.");
+    const hanlePutCompareList = (id) => {
+
         fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            fetch(`http://${process.IP}:${process.PORT}/compare/`,{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    id: data.id,
-                    name: data.name,
-                    image: data.image,
-                    price: data.price,
-                    discount: data.discount,
-                    shortDescription: data.shortDescription,
-                    rating: data.rating
-                }),
+            .then(res => {
+                return res.json();
             })
-        }).then(
-            alert("success")
-        )
+            .then(data => {
+                fetch(`http://${process.IP}:${process.PORT}/compare`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        id: data.id,
+                        name: data.name,
+                        image: data.image,
+                        price: data.price,
+                        discount: data.discount,
+                        shortDescription: data.shortDescription,
+                        rating: data.rating,
+                    }),
+                })
+            }).then(
+                alert("success")
+            )
+
     }
 
-    const productList = searchData.map(item => (
-        <div className="col-xl-3 col-md-6 col-lg-3 col-sm-6 " key={item.id}>
+    const hanlePutWishList = (id) => {
+
+        fetch(`http://${process.IP}:${process.PORT}/product/${id}`)
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                fetch(`http://${process.IP}:${process.PORT}/wish/`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        id: data.id,
+                        name: data.name,
+                        image: data.image,
+                        price: data.price,
+                        discount: data.discount
+                    }),
+                })
+            }).then(
+                alert("success")
+            )
+    }
+
+    const productList = searchData.map((item, index) => (
+
+        <div className={`col-xl-${columNumber} col-md-6 col-lg-${columNumber} col-sm-6 `} key={item.id}>
             <div className="product-wrap mb-25">
                 <div className="product-img">
                     <Link to={`/productdetail/${item.id}`}>
@@ -94,26 +104,34 @@ export default function ProductView({ categoryName }) {
                         <img className="hover-img" src="/assets/img/product/fashion/6.jpg" alt="" />
                     </Link>
                     <div className="product-img-badges">
-                        {/* 리액트 자바스크립트 구문 */}
-                        {/* 디스카운트가 0보다 크면 입력 */}
                         {
-                            item.discount > 0 ? (<span className="pink">-{item.discount}</span>) : ('')
+                            item.discount > 0 ? <span className="pink">{item.discount}%</span> : ''
                         }
-                        {/* 신규 아이템이면 입력 */}
                         {
-                            item.new ? (<span className="purple">new</span>) : ('')
+                            item.new ? <span className="purple">new</span> : ''
                         }
-                        {/* <span className="purple">new</span> */}
                     </div>
                     <div className="product-action">
                         <div className="pro-same-action pro-wishlist">
-                            <button className="" title="Add to wishlist" onClick={() => handleClick(item.id)}><i className="las la-bookmark"></i></button>
+                            <button
+                                value={item.id}
+                                onClick={() => hanlePutWishList(item.id)}
+                            >
+                                <i className="las la-bookmark"></i>
+                            </button>
                         </div>
                         <div className="pro-same-action pro-cart">
-                            <button disabled="" className="active">Out of Stock</button>
+                            <button disabled="" className="active">Buy</button>
                         </div>
                         <div className="pro-same-action pro-quickview">
-                            <button title="Quick View" onClick={() => handleCompareClick(item.id)}><i className="las la-eye"></i></button>
+                            <button
+                                className=""
+                                title={item.id}
+                                onClick={() => hanlePutCompareList(item.id)}
+                                value={item.id}
+                            >
+                                <i className="las la-eye"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -127,17 +145,22 @@ export default function ProductView({ categoryName }) {
                         )}
                     </div>
                     <div className="product-price">
-                        <span>{(item.price * ((100 - item.discount) / 100)).toFixed(2)}</span>
-                        <span className="old">{item.price}</span>
+                        <span>{item.price}</span>
+                        <span className="old">{(item.price * ((100 + item.discount) / 100)).toFixed(2)}</span>
                     </div>
                 </div>
             </div>
         </div>
-    )).slice(0, 10);
+
+
+    )).slice(0, sliceNumber);
+
+
 
     return (
         <div className="row mt-5">
             {productList}
         </div>
+
     );
 }

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import Headers from '../../layout/Header';
+import Header from '../../layout/Header';
 import BreadCrumb from '../../elements/ui/BreadCrumb';
 import WishTable from '../../elements/widgets/wishtable/WishTable';
 import Footer from '../../layout/Footer';
@@ -8,7 +8,7 @@ import Footer from '../../layout/Footer';
 export default function WishList() {
     return (
         <Fragment>
-            <Headers />
+            <Header />
             <BreadCrumb
                 productName="WishList" />
             <WishTable/>

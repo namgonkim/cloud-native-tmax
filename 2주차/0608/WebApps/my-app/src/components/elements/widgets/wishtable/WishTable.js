@@ -32,7 +32,6 @@ export default function WishTable() {
                 setWishDatas(data);
             })
         )
-        
     }
 
     const wishTableList = wishDatas.map((item, index) => (

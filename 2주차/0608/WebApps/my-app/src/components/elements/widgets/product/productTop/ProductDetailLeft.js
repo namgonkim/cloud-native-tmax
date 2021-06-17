@@ -1,10 +1,4 @@
-import React, { useState } from "react";
-
-export default function ProductDetailLeft({productData}) {
-
-    const [isCheck, setIsCheck] = useState('');
-
-
+export default function ProductDetailLeft() {
     return(
         <div className="col-lg-6 col-md-6">
             <div className="product-large-image-wrapper">
@@ -15,7 +9,7 @@ export default function ProductDetailLeft({productData}) {
                                 <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i className="fas fa-expand"></i></button>
                             </div>
                             <div className="single-image">
-                                <img src={productData.image && productData.image[0]} className="img-fluid" alt=""/>
+                                <img src="/assets/img/product/fashion/7.jpg" className="img-fluid" alt=""/>
                             </div>
                         </div>
                     </div>
@@ -25,23 +19,14 @@ export default function ProductDetailLeft({productData}) {
             <div className="product-small-image-wrapper mt-15">
                 <div className="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-free-mode">
                     <div className="swiper-wrapper">
-                        
-                        {
-                            productData.image ?
-                            productData.image.map((item, index) => (
-                                <div className="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style={{ width: "135px", marginRight: "10px"}}>
-                                    <div className="single-image" key={index}>
-                                        <img src={item} className="img-fluid" alt=""/>
-                                    </div>
-                                </div>
-                            )).slice(0, productData.image.length -1)
-                            : <span> No Image</span>
-                        }
-                            
-
+                        <div className="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style={{ width: "135px", marginRight: "10px"}}>
+                            <div className="single-image">
+                                <img src="/assets/img/product/fashion/7.jpg" className="img-fluid" alt=""/>
+                            </div>
+                        </div>
                     </div>
-                    <button className="swiper-button-next ht-swiper-button-nav" tabIndex="0" aria-label="Next slide"><i className="fas fa-chevron-right"></i></button>
-                    <button className="swiper-button-prev ht-swiper-button-nav" tabIndex="0" aria-label="Previous slide"><i className="fas fa-chevron-left"></i></button>
+                    <button className="swiper-button-next ht-swiper-button-nav" tabindex="0" aria-label="Next slide"><i className="fas fa-chevron-right"></i></button>
+                    <button className="swiper-button-prev ht-swiper-button-nav" tabindex="0" aria-label="Previous slide"><i className="fas fa-chevron-left"></i></button>
                     <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                 </div>
             </div>

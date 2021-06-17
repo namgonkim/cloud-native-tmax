@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function BreadCrumb({productId, productName, productUrl}) {
+export default function BreadCrumb({productId, productName}) {
     return (
         <div className="breadcrumb-area pt-35 pb-35 bg-gray-3">
             <div className="container">
@@ -11,7 +11,7 @@ export default function BreadCrumb({productId, productName, productUrl}) {
                             <Link to="/" aria-current="page" className="active">Home</Link>
                             <span>/</span>
                         </span>
-                        <span to={productUrl}>{productName}</span>
+                        <span>{productName}</span>
                     </span>
                 </div>
             </div>
