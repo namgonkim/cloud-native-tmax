@@ -68,7 +68,24 @@
       "rating": 5
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "90",
+      "name": "Lorem ipsum kids three",
+      "image": [
+        "/assets/img/product/fashion/25.jpg",
+        "/assets/img/product/fashion/26.jpg",
+        "/assets/img/product/fashion/27.jpg",
+        "/assets/img/product/fashion/28.jpg",
+        "/assets/img/product/fashion/29.jpg"
+      ],
+      "price": 17.45,
+      "discount": 40,
+      "qty": 6,
+      "color": "",
+      "size": ""
+    }
+  ],
   "wish": [
     {
       "id": "2",
