@@ -1,4 +1,5 @@
 -- 1. 사원 테이블과 부서 테이블에서 사원 번호와 사원 이름, 소속부서 번호, 소속부서 이름을 출력하도록 표준 inner join 코드를 생성하세요
+-- 제출
 SELECT e.empno,
        e.ename,
        e.deptno,
@@ -6,6 +7,14 @@ SELECT e.empno,
 FROM   emp e,
        dept d
 WHERE  e.deptno = d.deptno;
+
+-- 정답 (표준 조인 감점 -1)
+SELECT e.empno,
+       e.ename,
+       e.deptno,
+       d.dname
+FROM   emp e join dept d
+ON    (e.deptno = d.deptno);
 
 --2. 사원 테이블과 부서 테이블에서 사원 번호와 사원이름, 소속부서 번호와 소속부서 이름을 출력하도록 natural join 코드를 생성하세요.
 SELECT  e.empno,
