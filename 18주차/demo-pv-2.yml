@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-deployment
+  labels:
+    app: my-nginx
+spec: 
+  selector: 
+    matchLabels:
+      app: my-nginx
+  template:
+    metadata:
+      labels: 
+        app: my-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        volumeMounts:
+          - mountPath: /mydata-container
+            name: my-hostpath-volume
+      volumes:
+        - name: my-hostpath-volume
+          hostPath:
+            path: /root/work/mydata
+            type: Directory

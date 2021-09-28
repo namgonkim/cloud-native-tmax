@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata: 
+  name: my-ingress
+spec: 
+  rules:
+  - http: 
+      paths:
+        - path: /
+          pathType: Prefix
+          backend: 
+            service: 
+              name: svc-shopping
+              port:
+                number: 8080
+        - path: /customer
+          pathType: Exact
+          backend:
+            service:
+              name: svc-customer
+              port:
+                number: 8080
+        - path: /order
+          pathType: Exact
+          backend:
+            service:
+              name: svc-order
+              port:
+                number: 8080
