@@ -10,20 +10,20 @@ spec:
           pathType: Prefix
           backend: 
             service: 
-              name: svc-shopping
+              name: shopping-svc
               port:
                 number: 8080
         - path: /customer
           pathType: Exact
           backend:
             service:
-              name: svc-customer
+              name: customer-svc
               port:
                 number: 8080
         - path: /order
           pathType: Exact
           backend:
             service:
-              name: svc-order
+              name: order-svc
               port:
                 number: 8080
