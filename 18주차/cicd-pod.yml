@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cicd-pod
+  labels:
+    category: cicd
+spec:
+  containers:
+    - name:  cicd-container
+      image:  namgonkim/cicd-project:2.0
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: cicd-svc
+spec: 
+  selector:
+    category: cicd
+  ports:
+    - port: 8080
