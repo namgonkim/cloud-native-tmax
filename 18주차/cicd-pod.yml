@@ -8,6 +8,7 @@ spec:
   containers:
     - name:  cicd-container
       image:  namgonkim/cicd-project:2.0
+      imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
